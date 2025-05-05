@@ -4,6 +4,8 @@ import {
     Routes,
 } from "react-router-dom";
 import './App.css';
+import Typical from 'react-typical';
+
 
 /* Pages */
 import Home from "./pages/Home/HomePage";
@@ -54,5 +56,7 @@ function App() {
         </>
     )
 }
+
+<Typical steps={['Developer', 1000, 'Designer', 1000]} loop={Infinity} />
 
 export default App
