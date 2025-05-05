@@ -18,23 +18,23 @@ const projects = [
     {
         title: "Calculater",
         description: "Simple, fast, and reliable calculator",
-        tech: ["HTML5", "CSS", "JavaScript"],
+        tech: ["HTML", "CSS", "JavaScript"],
         image: "proyecto-app-18.png",
         demo: "https://calculater-qw9xju6ke-priyankas-projects-cd5834ae.vercel.app/",
         repo: "https://github.com/Priyanka20067/calculater"
     },
     {
         title: "Flower website",
-        description: "Lawyers website",
-        tech: ["HTML5", "CSS", "JavaScript", "jQuery", "Bootstrap"],
-        image: "proyecto-14.jpg",
-        demo: "https://flower-shop-seven-plum.vercel.app/",
-        repo: "https://github.com/Nahuel61920/Justice"
+        description: "Flower shop",
+        tech: ["HTML", "CSS", "JavaScript"],
+        image: "proyecto-14.png",
+        demo: "https://flower-shop-elpyn52ey-priyankas-projects-cd5834ae.vercel.app/",
+        repo: "https://github.com/Priyanka20067/flower-shop"
     },
     {
-        title: "PI Dogs",
-        description: "Individual Project",
-        tech: ["React", "CSS", "Redux", "NodeJS", "ExpressJS", "Sequelize", "PostgreSQL"],
+        title: "AI-Mental health assistant",
+        description: "",
+        tech: ["React Native","Node Js","Express","MongoDB"],
         image: "proyecto-app-17.png",
         demo: "https://pi-dogs-main-ashy.vercel.app/",
         repo: "https://github.com/Nahuel61920/PI-DOGS-MAIN"
