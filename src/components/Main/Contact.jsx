@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../pages/Contact/ContactPage.css'
-import Typical from 'react-typical'
+import { TypeAnimation } from 'react-type-animation';
+
 
 
 
@@ -18,19 +19,21 @@ const Contact = () => (
             
                Contact me by: 
            
-               <Typical
-  className="site-contacto"
-  loop={Infinity}
-  wrapper="b"
-  steps={[
+               <TypeAnimation
+  sequence={[
     'Gmail', 1500,
     'WhatsApp', 1500,
-    'Instragram', 1500,
+    'Instagram', 1500,
     'Telegram', 1500,
     'Linkedin', 1500,
-    'Github', 1500,
+    'GitHub', 1500,
   ]}
+  speed={50}
+  wrapper="b"
+  repeat={Infinity}
+  className="site-contacto"
 />
+
 
 
         </h3>
