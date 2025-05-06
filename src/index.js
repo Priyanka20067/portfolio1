@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { LangProvider } from "./context/Context";
 import { HashRouter } from "react-router-dom";
-import Typical from 'react-typical';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -23,4 +23,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-<Typical steps={['Developer', 1000, 'Designer', 1000]} loop={Infinity} />
+

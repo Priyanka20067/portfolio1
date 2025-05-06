@@ -1,5 +1,6 @@
 import React from 'react';
-import Typical from 'react-typical';
+
+
 
 /* Componet */
 import About from './About';
@@ -18,6 +19,6 @@ const Main = () => (
         <Contact />
     </main>
 );
-<Typical steps={['Developer', 1000, 'Designer', 1000]} loop={Infinity} />
+
 
 export default Main;
