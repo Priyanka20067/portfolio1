@@ -6,7 +6,7 @@ import { LangProvider } from "./context/Context";
 import { HashRouter } from "react-router-dom";
 
 
-<script src="/main.fd09bba6.js"></script>
+{/* <script src="/main.fd09bba6.js"></script> */}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
