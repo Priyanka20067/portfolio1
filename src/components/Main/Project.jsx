@@ -37,15 +37,15 @@ const projects = [
         tech: ["React Native","Node Js","Express","MongoDB"],
         image: "proyecto-app-17.png",
         demo: "https://pi-dogs-main-ashy.vercel.app/",
-        repo: "https://github.com/Nahuel61920/PI-DOGS-MAIN"
+        repo: "https://github.com/Priyanka20067/health-assistant"
     },
     {
-        title: "Power Engine",
-        description: "Automobiles Website",
-        tech: ["HTML5", "CSS", "JavaScript"],
-        image: "proyecto-7.jpg",
-        demo: "https://nahuel61920.github.io/Power-Engine/",
-        repo: "https://github.com/Nahuel61920/Power-Engine"
+        title: "Memory color Game",
+        description: "Repeat the color pattern shown. Each round adds one more color",
+        tech: ["HTML", "CSS", "JavaScript"],
+        image: "proyecto-7.png",
+        demo: "https://memory-color-game-qv1a4mblj-priyankas-projects-cd5834ae.vercel.app/",
+        repo: "https://github.com/Priyanka20067/memory-color-game"
     },
     {
         title: "Spider-Man fan page",
