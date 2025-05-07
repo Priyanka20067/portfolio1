@@ -2,7 +2,7 @@ import React from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-export default function ParticleHeaderBg() {
+export default function StarryBackground() {
   const particlesInit = async (main) => {
     console.log(main);
     await loadFull(main);
@@ -23,169 +23,101 @@ export default function ParticleHeaderBg() {
           position: "50% 50%",
           repeat: "no-repeat",
           size: "cover",
-          color: "#000",
+          color: "#000", // Dark background for stars
         },
         fullScreen: {
           enable: false,
         },
         interactivity: {
-          modes: {
-            bubble: {
-              distance: 400,
-              duration: 2,
-              opacity: 0.8,
-              size: 10,
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse"
             },
-            grab: {
-              distance: 400,
-            },
-            repulse: {
-              divs: {
-                distance: 200,
-                duration: 0.4,
-                factor: 100,
-                speed: 1,
-                maxSpeed: 50,
-                easing: "ease-out-quad",
-              },
-            },
+            onClick: {
+              enable: true,
+              mode: "push"
+            }
           },
+          modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4
+            },
+            push: {
+              quantity: 4
+            }
+          }
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#ffffff", // White stars
           },
           links: {
-            color: {
-              value: "#000",
-            },
+            enable: true,
             distance: 150,
+            color: "#ffffff",
             opacity: 0.4,
+            width: 1
           },
           move: {
-            attract: {
-              rotate: {
-                x: 600,
-                y: 1200,
-              },
-            },
             enable: true,
+            speed: 2,
+            direction: "none",
+            random: true,
+            straight: false,
             outModes: {
-              bottom: "out",
-              left: "out",
-              right: "out",
-              top: "out",
+              default: "out"
             },
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
           },
           number: {
             density: {
               enable: true,
+              area: 800
             },
-            value: 24,
+            value: 100 // More particles for stars
           },
           opacity: {
-            random: {
-              enable: true,
-            },
             value: {
               min: 0.1,
-              max: 1,
+              max: 1
             },
             animation: {
               enable: true,
               speed: 1,
-              minimumValue: 0.2,
-            },
-          },
-          rotate: {
-            random: {
-              enable: true,
-            },
-            animation: {
-              enable: true,
-              speed: 5,
-            },
-            direction: "random",
+              minimumValue: 0.1,
+              sync: false
+            }
           },
           shape: {
-            type: "image",
-            image: [
-              {
-                src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-                width: 20,
-                height: 20,
-              },
-              {
-                src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-                width: 20,
-                height: 20,
-              },
-            ],
+            type: "circle" // Use circles for stars instead of images
           },
           size: {
-            value: 50,
+            value: {
+              min: 1,
+              max: 3 // Varying sizes for stars
+            },
             animation: {
-              speed: 40,
+              enable: true,
+              speed: 2,
               minimumValue: 0.1,
-            },
+              sync: false
+            }
           },
-          stroke: {
-            width: "100px",
-            color: {
-              value: "#000000",
-            },
-          },
+          twinkle: {
+            particles: {
+              enable: true,
+              frequency: 0.05,
+              opacity: 1
+            }
+          }
         },
+        detectRetina: true
       }}
     />
   );

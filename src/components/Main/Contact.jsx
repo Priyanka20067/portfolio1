@@ -39,18 +39,18 @@ const Contact = () => (
         </h3>
 
         <div className="icons">
-            <a href="priyankam18042006@gmail.com" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
-                <div className="layer">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span className="fab fas fa-envelope"></span>
-                </div>
-                <div className="text">
-                    Gmail
-                </div>
-            </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=priyankam18042006@gmail.com" 
+   target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
+  <div class="layer">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="fab fas fa-envelope"></span>
+  </div>
+</a>
+
+
             <a href="https://api.whatsapp.com/send?phone=8072776141" target="_blank" rel="noopener noreferrer" data-aos="zoom-in">
                 <div className="layer">
                     <span></span>
