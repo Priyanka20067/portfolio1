@@ -77,7 +77,7 @@ const Project = () => {
           </div>
           <div className="projects__item">
             <a onClick={() => cambiarEstadoModal14(!estadoModal14)}>
-              <img src={proyectsImg(`./proyecto-14.jpg`)} alt="" className="projects__img" />
+              <img src={proyectsImg(`./proyecto-14.png`)} alt="" className="projects__img" />
             </a>
           </div>
           <div className="projects__item">
@@ -122,7 +122,7 @@ const Project = () => {
           </div>
           <div className="projects__item">
             <a onClick={() => cambiarEstadoModal7(!estadoModal7)}>
-              <img src={proyectsImg(`./proyecto-7.jpg`)} alt="" className="projects__img" />
+              <img src={proyectsImg(`./proyecto-7.png`)} alt="" className="projects__img" />
             </a>
           </div>
           <div className="projects__item">
@@ -149,7 +149,7 @@ const Project = () => {
       >
         <div className="content-modal">
           <div className="pw-content">
-            <div className="eins-modal-preview"><img src={proyectsImg(`./proyecto-17-com.png`)} alt="" /></div>
+            <div className="eins-modal-preview"><img src={proyectsImg(`./proyecto-app-17-com.png`)} alt="" /></div>
             <div className="eins-modal-text">
               <p>
                 <FormattedMessage

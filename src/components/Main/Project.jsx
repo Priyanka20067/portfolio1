@@ -2,7 +2,7 @@ import React from 'react';
 import '../../pages/Project/ProjectPage.css';
 import { Link } from 'react-router-dom';
 import { ButtomGet } from '../ButtomGet/ButtomGet';
-import { FormattedMessage } from 'react-intl';
+
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -109,7 +109,7 @@ const Project = () => {
     return (
         <section className="proyectos" id="proyectos">
             <h2 className="heading">
-                <FormattedMessage id='projects' defaultMessage='Projects' />
+                Projects
             </h2>
             <div
                 className="proyect-site"
