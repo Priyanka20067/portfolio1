@@ -32,6 +32,14 @@ const projects = [
         repo: "https://github.com/Priyanka20067/flower-shop"
     },
     {
+        title: "E-commerce",
+        description: "E-commerce website",
+        tech: ["React and vite"],
+        image: "e-commerce.png",
+        demo: "https://e-commerce-clfs-i5pava5ft-priyankas-projects-cd5834ae.vercel.app/",
+        repo: "https://github.com/Priyanka20067/E-commerce"
+    },
+    {
         title: "AI-Mental health assistant",
         description: "",
         tech: ["React Native","Node Js","Express","MongoDB"],
