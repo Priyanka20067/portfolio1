@@ -68,7 +68,7 @@ const Project = () => {
           </div>
           <div className="projects__item">
             <a onClick={() => cambiarEstadoModal14(!estadoModal14)}>
-              <img src={proyectsImg(`./proyecto-14.png`)} alt="" className="projects__img" />
+              <img src={proyectsImg(`./proyecto-web-11.png`)} alt="" className="projects__img" />
             </a>
           </div>
           <div className="projects__item">
@@ -164,17 +164,17 @@ const Project = () => {
 <div className="content-modal">
   <div className="pw-content">
     <div className="eins-modal-preview">
-      <img src={proyectsImg(`./proyecto-14-com.png`)} alt="" />
+      <img src={proyectsImg(`./proyecto-web-11.png`)} alt="" />
     </div>
     <div className="eins-modal-text">
       <p>
-        Justice, page created for law firm.
+        E-commerce, page created for law firm.
       </p>
       <p>
-        Focused on showing the client the value, experience and professionalism of the lawyers they can hire, choosing the category of their specific case.
+        Focused on showcasing the e-commerce platform, along with the experience and professionalism of the lawyers available for hire, allowing users to choose a lawyer based on their specific case category.
       </p>
       <div className="eins-modal-text-2">
-        <span>Link:</span> <a href="https://nahuel61920.github.io/Justice" target="_blank">https://justice.com</a>
+        <span>Link:</span> <a href="https://e-commerce-clfs-i5pava5ft-priyankas-projects-cd5834ae.vercel.app/" target="_blank">https://justice.com</a>
       </div>
       <div className="eins-modal-text-3">
         <span>Used technology:</span>
