@@ -35,7 +35,7 @@ const projects = [
         title: "E-commerce",
         description: "E-commerce website",
         tech: ["React and vite"],
-        image: "e-commerce.png",
+        image: "proyecto-web-11.png",
         demo: "https://e-commerce-clfs-i5pava5ft-priyankas-projects-cd5834ae.vercel.app/",
         repo: "https://github.com/Priyanka20067/E-commerce"
     },
@@ -51,66 +51,12 @@ const projects = [
         title: "Memory color Game",
         description: "Repeat the color pattern shown. Each round adds one more color",
         tech: ["HTML", "CSS", "JavaScript"],
-        image: "proyecto-7.png",
+        image: "proyecto-game-4.jpg",
         demo: "https://memory-color-game-qv1a4mblj-priyankas-projects-cd5834ae.vercel.app/",
         repo: "https://github.com/Priyanka20067/memory-color-game"
     },
-    {
-        title: "Spider-Man fan page",
-        description: "Fan page Spider-Man",
-        tech: ["HTML5", "CSS", "JavaScript", "Bootstrap"],
-        image: "proyecto-6.jpg",
-        demo: "https://nahuel61920.github.io/Spider-Man/",
-        repo: "https://github.com/Nahuel61920/Spider-Man"
-    },
-    {
-        title: "EveryRunning",
-        description: "Website shoes",
-        tech: ["HTML5", "CSS", "JavaScript", "Bootstrap"],
-        image: "proyecto-12.jpg",
-        demo: "https://nahuel61920.github.io/EveryRunning/",
-        repo: "https://github.com/Nahuel61920/EveryRunning"
-    },
-    {
-        title: "Premier Food",
-        description: "Fast food",
-        tech: ["HTML5", "CSS", "JavaScript", "Sass"],
-        image: "proyecto-5.jpg",
-        demo: "https://nahuel61920.github.io/PremierFood/",
-        repo: "https://github.com/Nahuel61920/PremierFood"
-    },
-    {
-        title: "ShopTec",
-        description: "Ecommerce",
-        tech: ["HTML5", "CSS", "Sass", "JavaScript"],
-        image: "proyecto-8.jpg",
-        demo: "https://nahuel61920.github.io/shop-tec/",
-        repo: "https://github.com/Nahuel61920/shop-tec"
-    },
-    {
-        title: "Elegant Hand",
-        description: "Watch Shop",
-        tech: ["HTML5", "CSS", "JavaScript"],
-        image: "proyecto-10.jpg",
-        demo: "https://nahuel61920.github.io/ElegantHand/",
-        repo: "https://github.com/Nahuel61920/ElegantHand"
-    },
-    {
-        title: "Vida en papel",
-        description: "Bookstore",
-        tech: ["HTML5", "CSS", "JavaScript"],
-        image: "proyecto-9.jpg",
-        demo: "https://nahuel61920.github.io/vida-en-papel/",
-        repo: "https://github.com/Nahuel61920/vida-en-papel"
-    },
-    {
-        title: "Plus Anime",
-        description: "Anime website",
-        tech: ["HTML5", "CSS", "JavaScript"],
-        image: "proyecto-11.jpg",
-        demo: "https://nahuel61920.github.io/PlusAnime/",
-        repo: "https://github.com/Nahuel61920/PlusAnime"
-    }
+  
+
 ];
 
 const Project = () => {
