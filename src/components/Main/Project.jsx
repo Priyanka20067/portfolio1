@@ -41,10 +41,9 @@ const projects = [
     },
     {
         title: "AI-Mental health assistant",
-        description: "",
+        description: "Health assistant app",
         tech: ["React Native","Node Js","Express","MongoDB"],
         image: "proyecto-app-17.png",
-        demo: "https://pi-dogs-main-ashy.vercel.app/",
         repo: "https://github.com/Priyanka20067/health-assistant"
     },
     {
