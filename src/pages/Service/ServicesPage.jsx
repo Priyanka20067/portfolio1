@@ -64,7 +64,6 @@ const Services = () => {
                 <li><i className="fas fa-check"></i><span>Contact Form</span></li>
                 <li><i className="fas fa-check"></i><span>Domain for 1 year</span></li>
                 <li><i className="fas fa-check"></i><span>Hosting for 1 year</span></li>
-                <li><i className="fas fa-check"></i><span>Animations</span></li>
                 <li><i className="fas fa-check"></i><span>Free maintenance for 6 months</span></li>
                 
               </ul>
