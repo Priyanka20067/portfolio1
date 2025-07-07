@@ -43,21 +43,21 @@ const Services = () => {
             <div className="columns" data-aos="fade-up" data-aos-delay="200">
               <h3>Essential</h3>
               <h4 className="sub-title">Perfect for new businesses</h4>
-              <p className="numero"><span>$</span>150</p>
+              <p className="numero"><span>$</span>100</p>
               <ul className="ul-cards-services">
                 <li><i className="fas fa-check"></i><span>1 responsive page</span></li>
                 <li><i className="fas fa-check"></i><span>+3 sections for page</span></li>
                 <li><i className="fas fa-check"></i><span>Contact Form</span></li>
                 <li><i className="fas fa-check"></i><span>Domain for 1 year</span></li>
                 <li><i className="fas fa-check"></i><span>Hosting for 1 year</span></li>
-                <li><i className="fas fa-check"></i><span>Delivered in 5 business days</span></li>
+               
               </ul>
             </div>
 
             <div className="columns recomendado" data-aos="fade-up" data-aos-delay="300">
               <h3>Professional</h3>
-              <h4 className="sub-title">Designed for medium businesses</h4>
-              <p className="numero"><span>$</span>400</p>
+              <h4 className="sub-title">App Development</h4>
+              <p className="numero"><span>$</span>800</p>
               <ul className="ul-cards-services">
                 <li><i className="fas fa-check"></i><span>5 responsive pages</span></li>
                 <li><i className="fas fa-check"></i><span>+3 sections for page</span></li>
@@ -66,7 +66,7 @@ const Services = () => {
                 <li><i className="fas fa-check"></i><span>Hosting for 1 year</span></li>
                 <li><i className="fas fa-check"></i><span>Animations</span></li>
                 <li><i className="fas fa-check"></i><span>Free maintenance for 6 months</span></li>
-                <li><i className="fas fa-check"></i><span>Delivered in 7 business days</span></li>
+                
               </ul>
             </div>
 
