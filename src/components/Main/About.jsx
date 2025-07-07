@@ -40,7 +40,7 @@ const About = () => (
 
                 <h4>Front-End</h4>
                 <div className="skill">
-                    <div className="skills-container">
+                    
                         <div>
                             <img alt="HTML" className="icons-skils" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
                             <h5>HTML</h5>
@@ -61,7 +61,7 @@ const About = () => (
                             <img alt="Vite" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" />
                             <h5>Vite</h5>
                         </div>
-                    </div>
+                    
                 </div>
 
                 <h4>Back-End</h4>
@@ -82,6 +82,17 @@ const About = () => (
                         <img alt="MongoDB" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" />
                         <h5>MongoDB</h5>
                     </div>
+                </div>
+                <h4>App</h4>
+                 <div className="skill">
+                     <div>
+                            <img alt="React Native" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                            <h5>React Native</h5>
+                        </div>
+                        <div>
+                            <img alt="Android" className="icons-skils" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" />
+                            <h5>Android</h5>
+                        </div>
                 </div>
 
                 <h4>Tools</h4>
