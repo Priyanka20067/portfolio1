@@ -109,7 +109,7 @@ const Project = () => {
     </div>
     <div className="eins-modal-text">
       <p>
-        Justice, page created for law firm.
+        justice, create from ecommerce website
       </p>
       <p>
         Focused on showing the client the value, experience and professionalism of the lawyers they can hire, choosing the category of their specific case.

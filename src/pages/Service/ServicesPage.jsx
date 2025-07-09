@@ -59,7 +59,7 @@ const Services = () => {
               <h4 className="sub-title">App Development</h4>
               <p className="numero"><span>$</span>800</p>
               <ul className="ul-cards-services">
-                <li><i className="fas fa-check"></i><span>5 responsive pages</span></li>
+                <li><i className="fas fa-check"></i><span>3 responsive pages</span></li>
                 <li><i className="fas fa-check"></i><span>+3 sections for page</span></li>
                 <li><i className="fas fa-check"></i><span>Contact Form</span></li>
                 <li><i className="fas fa-check"></i><span>Domain for 1 year</span></li>
