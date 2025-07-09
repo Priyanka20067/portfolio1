@@ -79,7 +79,7 @@ const ProjectGame = () => {
                         <div className="eins-modal-preview"><img src={proyectsImg(`./proyecto-game-4.jpg`)} alt="" /></div>
                         <div className="eins-modal-text">
                             <p>
-                                Memorama
+                               
                             </p>
                             <p>
                                 <FormattedMessage
@@ -88,7 +88,7 @@ const ProjectGame = () => {
                                 />
                             </p>
                             <div className="eins-modal-text-2">
-                                <span>Link:</span> <a href="https://nahuel61920.github.io/Memorama" target="_blank">https://nahuel61920.github.io/Memorama</a>
+                                <span>Link:</span> <a href="https://nahuel61920.github.io/Memorama" target="_blank"></a>
                             </div>
                             <div className="eins-modal-text-3">
                                 <span>
