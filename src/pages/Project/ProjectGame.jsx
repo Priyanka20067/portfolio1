@@ -66,6 +66,11 @@ const ProjectGame = () => {
                             <img src={proyectsImg(`./proyecto-game-4.jpg`)} alt="" className="projects__img" />
                         </a>
                     </div>
+                     <div className="projects__item">
+                        <a onClick={() => cambiarEstadoModal4(!estadoModal4)}>
+                            <img src={proyectsImg(`./floppybird.png`)} alt="" className="projects__img" />
+                        </a>
+                    </div>
                     
                 </section>
             </main>
@@ -88,7 +93,7 @@ const ProjectGame = () => {
                                 />
                             </p>
                             <div className="eins-modal-text-2">
-                                <span>Link:</span> <a href="https://nahuel61920.github.io/Memorama" target="_blank"></a>
+                                <span>Link:</span> <a href="https://github.com/Priyanka20067/memory-color-game" target="_blank"></a>
                             </div>
                             <div className="eins-modal-text-3">
                                 <span>
@@ -108,7 +113,44 @@ const ProjectGame = () => {
                     </div>
                 </div>
             </Modal>
-
+ <Modal
+                estado={estadoModal4}
+                cambiarEstado={cambiarEstadoModal4}
+            >
+                <div className="content-modal">
+                    <div className="pw-content">
+                        <div className="eins-modal-preview"><img src={proyectsImg(`./floppybird.png`)} alt="" /></div>
+                        <div className="eins-modal-text">
+                            <p>
+                               
+                            </p>
+                            <p>
+                                <FormattedMessage
+                                    id='projectsGame-info-4-p2'
+                                    defaultMessage="You must guess the 2 pairs of cards in the shortest time and with fewer clicks."
+                                />
+                            </p>
+                            <div className="eins-modal-text-2">
+                                <span>Link:</span> <a href="https://github.com/Priyanka20067/floppy-bird" target="_blank"></a>
+                            </div>
+                            <div className="eins-modal-text-3">
+                                <span>
+                                    <FormattedMessage
+                                        id='projects-tec'
+                                        defaultMessage='Used technology:'
+                                    />
+                                </span>
+                                <div className="eins-modal-tec">
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="" />
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="" />
+                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="" />
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Modal>
            
 
             <ScrollToTop />
