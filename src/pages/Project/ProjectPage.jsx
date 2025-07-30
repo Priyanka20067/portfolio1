@@ -71,6 +71,11 @@ const Project = () => {
               <img src={proyectsImg(`./proyecto-web-11.png`)} alt="" className="projects__img" />
             </a>
           </div>
+          <div className="projects__item">
+            <a onClick={() => cambiarEstadoModal14(!estadoModal14)}>
+              <img src={proyectsImg(`./Admin.png`)} alt="" className="projects__img" />
+            </a>
+          </div>
           
         </section>
       </main>
@@ -95,7 +100,6 @@ const Project = () => {
           <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="" />
           <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="" />
           <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="" />
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" alt="" />
         </div>
       </div>
     </div>
@@ -131,7 +135,32 @@ const Project = () => {
   </div>
 </div>
 
-
+<div className="content-modal">
+  <div className="pw-content">
+    <div className="eins-modal-preview">
+      <img src={proyectsImg(`./Admin.png`)} alt="" />
+    </div>
+    <div className="eins-modal-text">
+      <p>
+      Flower shop
+      </p>
+      <p>
+        Designed to visually attract the user, with excellent quality culinary preparations and an interface with attractive transitions.
+      </p>
+      <div className="eins-modal-text-2">
+        <span>Link:</span> <a href="https://admin-dashboard-k7ej28j61-priyankas-projects-cd5834ae.vercel.app/dashboard" target="_blank">https://tato-food.com</a>
+      </div>
+      <div className="eins-modal-text-3">
+        <span>Used technology:</span>
+        <div className="eins-modal-tec">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="" />
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="" />
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
