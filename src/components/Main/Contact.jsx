@@ -43,6 +43,7 @@ const Contact = () => (
   <div class="layer">
     <span></span>
     <span></span>
+    
     <span></span>
     <span></span>
     <span class="fab fas fa-envelope"></span>
