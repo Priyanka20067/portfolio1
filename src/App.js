@@ -49,6 +49,7 @@ function App() {
                         <Route exact path="/project" element={<Project />}></Route>
                         <Route exact path="/project/app" element={<ProjectApp />} />
                         <Route exact path="/project/game" element={<ProjectGame />} />
+                        
                     </Routes>
 
             }
