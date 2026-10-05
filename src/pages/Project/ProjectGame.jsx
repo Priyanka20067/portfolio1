@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './ProjectPage.css';
 
 /* Modal */
@@ -7,156 +7,123 @@ import Modal from "./Modal";
 /* React router */
 import { NavLink } from 'react-router-dom';
 
-/* Componet */
+/* Component */
 import HeaderPage from '../../components/Header/HeaderPage';
 import Footer from '../../components/Footer/Footer';
-import ParticleBackground from "../../components/ParticlesBg/ParticleBackground";
 import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 
-/* Multi idioma */
-import { FormattedMessage } from 'react-intl';
-
-/* Img */
-const proyectsImg = require.context('../../img', true);
+/* Portfolio Context & Image Helper */
+import { usePortfolio } from '../../context/PortfolioContext';
+import { resolveImage } from '../../utils/imageHelper';
 
 const ProjectGame = () => {
-    const [estadoModal4, cambiarEstadoModal4] = useState(false);
-    const [estadoModal3, cambiarEstadoModal3] = useState(false);
-    const [estadoModal2, cambiarEstadoModal2] = useState(false);
-    const [estadoModal1, cambiarEstadoModal1] = useState(false);
+    const { projects } = usePortfolio();
+    const [selectedProject, setSelectedProject] = useState(null);
 
+    // Filter game projects from DB
+    const gameProjects = projects.filter(p => p.category === 'game');
 
     return (
         <div>
-
             <HeaderPage />
-
-            <ParticleBackground />
 
             <main>
                 <section className="proyectos mas-proyect" id="proyectos">
-                    <h1 className="heading">
-                        <FormattedMessage
-                            id='projects'
-                            defaultMessage='Projects'
-                        />
-                    </h1>
+                    <h1 className="heading">Projects</h1>
                     <nav className="navbar nav-proj">
-                        <NavLink to="/project/" offset={-150} duration={500}>
-                            <FormattedMessage
-                                id='site-web'
-                                defaultMessage='websites'
-                            />
+                        <NavLink to="/project">
+                            Websites
                         </NavLink>
-                        <NavLink to="/project/app" offset={-150} duration={500}>
+                        <NavLink to="/project/app">
                             Apps
                         </NavLink>
-                        <NavLink to="/project/game" offset={-150} duration={500}>
-                            <FormattedMessage
-                                id='games'
-                                defaultMessage='games'
-                            />
+                        <NavLink to="/project/game" className={({ isActive }) => isActive ? "active" : ""}>
+                            Games
                         </NavLink>
                     </nav>
                 </section>
 
                 <section className="projects__grid games">
-                    <div className="projects__item">
-                        <a onClick={() => cambiarEstadoModal4(!estadoModal4)}>
-                            <img src={proyectsImg(`./proyecto-game-4.jpg`)} alt="" className="projects__img" />
-                        </a>
-                    </div>
-                     <div className="projects__item">
-                        <a onClick={() => cambiarEstadoModal4(!estadoModal4)}>
-                            <img src={proyectsImg(`./floppybird.png`)} alt="" className="projects__img" />
-                        </a>
-                    </div>
-                    
+                    {gameProjects.map((project, index) => (
+                        <div className="projects__item" key={project._id || index}>
+                            <a
+                                href="#modal"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setSelectedProject(project);
+                                }}
+                            >
+                                <img
+                                    src={resolveImage(project.image)}
+                                    alt={project.title}
+                                    className="projects__img"
+                                />
+                            </a>
+                        </div>
+                    ))}
                 </section>
             </main>
 
+            {/* Dynamic Game Details Modal */}
             <Modal
-                estado={estadoModal4}
-                cambiarEstado={cambiarEstadoModal4}
+                estado={Boolean(selectedProject)}
+                cambiarEstado={() => setSelectedProject(null)}
             >
-                <div className="content-modal">
-                    <div className="pw-content">
-                        <div className="eins-modal-preview"><img src={proyectsImg(`./proyecto-game-4.jpg`)} alt="" /></div>
-                        <div className="eins-modal-text">
-                            <p>
-                               
-                            </p>
-                            <p>
-                                <FormattedMessage
-                                    id='projectsGame-info-4-p2'
-                                    defaultMessage="You must guess the 2 pairs of cards in the shortest time and with fewer clicks."
+                {selectedProject && (
+                    <div className="content-modal">
+                        <div className="pw-content">
+                            <div className="eins-modal-preview">
+                                <img
+                                    src={resolveImage(selectedProject.image)}
+                                    alt={selectedProject.title}
                                 />
-                            </p>
-                            <div className="eins-modal-text-2">
-                                <span>Link:</span> <a href="https://github.com/Priyanka20067/memory-color-game" target="_blank"></a>
                             </div>
-                            <div className="eins-modal-text-3">
-                                <span>
-                                    <FormattedMessage
-                                        id='projects-tec'
-                                        defaultMessage='Used technology:'
-                                    />
-                                </span>
-                                <div className="eins-modal-tec">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="" />
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="" />
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
-                                </div>
+                            <div className="eins-modal-text">
+                                <p>{selectedProject.title}</p>
+                                <p>{selectedProject.description}</p>
+                                {(selectedProject.demo || selectedProject.repo) && (
+                                    <div className="eins-modal-text-2">
+                                        <span>Link:</span>{" "}
+                                        <a
+                                            href={selectedProject.demo || selectedProject.repo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {selectedProject.demo || selectedProject.repo}
+                                        </a>
+                                    </div>
+                                )}
+                                {selectedProject.tech && selectedProject.tech.length > 0 && (
+                                    <div className="eins-modal-text-3">
+                                        <span>Used technology:</span>
+                                        <div className="eins-modal-tec" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
+                                            {selectedProject.tech.map((t, idx) => (
+                                                <span
+                                                    key={idx}
+                                                    style={{
+                                                        padding: '4px 10px',
+                                                        background: 'rgba(255,255,255,0.1)',
+                                                        borderRadius: '6px',
+                                                        fontSize: '13px',
+                                                        color: '#00d2df'
+                                                    }}
+                                                >
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </Modal>
- <Modal
-                estado={estadoModal4}
-                cambiarEstado={cambiarEstadoModal4}
-            >
-                <div className="content-modal">
-                    <div className="pw-content">
-                        <div className="eins-modal-preview"><img src={proyectsImg(`./floppybird.png`)} alt="" /></div>
-                        <div className="eins-modal-text">
-                            <p>
-                               
-                            </p>
-                            <p>
-                                <FormattedMessage
-                                    id='projectsGame-info-4-p2'
-                                    defaultMessage="You must guess the 2 pairs of cards in the shortest time and with fewer clicks."
-                                />
-                            </p>
-                            <div className="eins-modal-text-2">
-                                <span>Link:</span> <a href="https://github.com/Priyanka20067/floppy-bird" target="_blank"></a>
-                            </div>
-                            <div className="eins-modal-text-3">
-                                <span>
-                                    <FormattedMessage
-                                        id='projects-tec'
-                                        defaultMessage='Used technology:'
-                                    />
-                                </span>
-                                <div className="eins-modal-tec">
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="" />
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="" />
-                                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="" />
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Modal>
-           
 
             <ScrollToTop />
-
             <Footer />
         </div>
-    )
-}
+    );
+};
+
 export default ProjectGame;
