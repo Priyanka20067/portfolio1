@@ -2,7 +2,8 @@ import React from 'react';
 import '../../pages/Project/ProjectPage.css';
 import { Link } from 'react-router-dom';
 import { ButtomGet } from '../ButtomGet/ButtomGet';
-
+import { usePortfolio } from '../../context/PortfolioContext';
+import { resolveImage } from '../../utils/imageHelper';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,55 +11,13 @@ import 'swiper/css';
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
 
-// Images
-const proyectImg = require.context('../../img', true);
-
-// Project Data
-const projects = [
-    {
-        title: "Calculater",
-        description: "Simple, fast, and reliable calculator",
-        tech: ["HTML", "CSS", "JavaScript"],
-        image: "proyecto-app-18.png",
-        demo: "https://calculater-qw9xju6ke-priyankas-projects-cd5834ae.vercel.app/",
-        repo: "https://github.com/Priyanka20067/calculater"
-    },
-    {
-        title: "Flower website",
-        description: "Flower shop",
-        tech: ["HTML", "CSS", "JavaScript"],
-        image: "proyecto-14.png",
-        demo: "https://flower-shop-elpyn52ey-priyankas-projects-cd5834ae.vercel.app/",
-        repo: "https://github.com/Priyanka20067/flower-shop"
-    },
-    {
-        title: "E-commerce",
-        description: "E-commerce website",
-        tech: ["React and vite"],
-        image: "proyecto-web-11.png",
-        demo: "https://e-commerce-clfs-i5pava5ft-priyankas-projects-cd5834ae.vercel.app/",
-        repo: "https://github.com/Priyanka20067/E-commerce"
-    },
-    {
-        title: "AI-Mental health assistant",
-        description: "Health assistant app",
-        tech: ["React Native","Node Js","Express","MongoDB"],
-        image: "proyecto-app-17.png",
-        repo: "https://github.com/Priyanka20067/health-assistant"
-    },
-    {
-        title: "Memory color Game",
-        description: "Repeat the color pattern shown. Each round adds one more color",
-        tech: ["HTML", "CSS", "JavaScript"],
-        image: "proyecto-game-4.jpg",
-        demo: "https://memory-color-game-qv1a4mblj-priyankas-projects-cd5834ae.vercel.app/",
-        repo: "https://github.com/Priyanka20067/memory-color-game"
-    },
-  
-
-];
-
 const Project = () => {
+    const { projects } = usePortfolio();
+
+    // Show featured projects or all projects
+    const displayProjects = projects.filter(p => p.featured);
+    const list = displayProjects.length > 0 ? displayProjects : projects;
+
     return (
         <section className="proyectos" id="proyectos">
             <h2 className="heading">
@@ -72,7 +31,7 @@ const Project = () => {
             >
                 <Swiper
                     spaceBetween={30}
-                    loop={true}
+                    loop={list.length > 2}
                     grabCursor={true}
                     centeredSlides={true}
                     autoplay={{
@@ -90,24 +49,30 @@ const Project = () => {
                     }}
                     className='proyectos-slider mySwiper'
                 >
-                    {projects.map((project, index) => (
-                        <SwiperSlide className='caja' key={index}>
+                    {list.map((project, index) => (
+                        <SwiperSlide className='caja' key={project._id || index}>
                             <img
-                                src={proyectImg(`./${project.image}`)}
+                                src={resolveImage(project.image)}
                                 alt={project.title}
                             />
                             <div className="content">
                                 <h3>{project.title}</h3>
                                 <p>{project.description}</p>
-                                <p className="tecnologias">
-                                    {project.tech.join(" - ")}
-                                </p>
-                                <a href={project.demo} className="custom-btn btn" target="_blank" rel="noopener noreferrer">
-                                    <span>Demo</span>
-                                </a>
-                                <a href={project.repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">
-                                    Repository
-                                </a>
+                                {project.tech && project.tech.length > 0 && (
+                                    <p className="tecnologias">
+                                        {Array.isArray(project.tech) ? project.tech.join(" - ") : project.tech}
+                                    </p>
+                                )}
+                                {project.demo && (
+                                    <a href={project.demo} className="custom-btn btn" target="_blank" rel="noopener noreferrer">
+                                        <span>Demo</span>
+                                    </a>
+                                )}
+                                {project.repo && (
+                                    <a href={project.repo} className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">
+                                        Repository
+                                    </a>
+                                )}
                             </div>
                         </SwiperSlide>
                     ))}
