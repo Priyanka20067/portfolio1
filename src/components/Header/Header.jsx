@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import './Header.css';
 
 /* ReactScroll */
@@ -7,36 +7,38 @@ import { Link } from 'react-scroll';
 /* React router */
 import { NavLink } from 'react-router-dom';
 
-/* DarkMode */
-import DarkMode from '../DarkMode/DarkMode';
-
-/* Language Context */
-import { langContext } from '../../context/Context';
+/* Portfolio Context */
+import { usePortfolio } from '../../context/PortfolioContext';
 
 const Header = () => {
-    const idioma = useContext(langContext);
+    const { profile } = usePortfolio();
 
     const menuDesplegable = () => {
         let navbar = document.querySelector('.navbar');
-        navbar.classList.toggle("activar");
+        if (navbar) navbar.classList.toggle("activar");
 
         window.onscroll = () => {
-            if (window.scrollY > 0) {
-                document.querySelector(".site-header").classList.add("activar");
-            } else {
-                document.querySelector(".site-header").classList.remove("activar");
+            const header = document.querySelector(".site-header");
+            if (header) {
+                if (window.scrollY > 0) {
+                    header.classList.add("activar");
+                } else {
+                    header.classList.remove("activar");
+                }
             }
-
-            navbar.classList.remove("activar");
+            if (navbar) navbar.classList.remove("activar");
         };
     };
+
+    const logoText = profile?.logoTitle || profile?.name || 'PRIYANKA';
+    const badge = profile?.badge || '🦄';
 
     return (
         <header className="site-header">
             <div id="menu-btn" className="fas fa-bars" onClick={menuDesplegable}></div>
 
             <NavLink className="logo" to="/">
-                <p>🦄<span>PRIYANKA</span>🦄</p>
+                <p>{badge}<span>{logoText}</span>{badge}</p>
             </NavLink>
 
             <nav className="navbar">
@@ -55,11 +57,7 @@ const Header = () => {
                 <Link to="contactos" spy={true} offset={-150} href="#contactos">
                    Contact
                 </Link>
-
-               
             </nav>
-
-            
         </header>
     );
 };
