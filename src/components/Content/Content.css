@@ -2,22 +2,38 @@
 
 .contenido {
   background: #010101;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-position: center center;
-background-size: cover;
+  background-size: cover;
 }
 
 .inicio{
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
-  
+  align-items: center;
+  position: relative;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
 }
 
 .inicio .titulo{
-  margin: 20rem auto 0 auto;
+  margin: 0 auto;
   text-align: center;
   z-index: 200!important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .inicio .titulo p {
@@ -25,43 +41,53 @@ background-size: cover;
   color: var(--white);
   position: relative;
   font-weight: 600;
+  margin: 0.4rem 0;
 }
 
 .inicio .titulo h1{
   font-size: 4.5rem;
   color: var(--green);
+  margin: 0.4rem 0;
 }
 
 .wrapper {
-  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem auto 2rem auto;
+  gap: 2.5rem;
 }
 .wrapper .button{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
   height: 60px;
   width: 60px;
-  float: left;
-  margin: 0 2rem;
   overflow: hidden;
   color: #000;
   background: var(--green);
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: width 0.35s ease, background-color 0.3s ease;
 }
 .wrapper .button:hover{
-  width: 170px;
+  width: 185px;
 }
 .wrapper .button .icon{
-  display: inline-block;
-  padding: 0 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 60px;
   width: 60px;
+  min-width: 60px;
   border-radius: 50px;
   box-sizing: border-box;
-  line-height: 60px;
-  transition: all 1.5s ease-out!important;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease;
 }
 
 .wrapper .button:nth-child(1):hover .icon{
@@ -78,17 +104,23 @@ background-size: cover;
 }
 .wrapper .button .icon i{
   font-size: 25px;
-  line-height: 60px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease-out;
 }
 .wrapper .button:hover .icon i{
   color: #fff;
 }
 .wrapper .button span{
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 60px;
-  margin-left: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 12px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
   transition: all 0.3s ease-out;
   color: #fff;
 }
@@ -114,7 +146,8 @@ background-size: cover;
   width: 30px;
   border: 2px solid #fff;
   position: absolute;
-  left: 49%;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 20px;
   border-radius: 50px;
   cursor: pointer;
@@ -123,6 +156,7 @@ background-size: cover;
 .scroll-down::after {
   content: "";
   position: absolute;
+  left: 50%;
   top: 20%;
   height: 10px;
   width: 10px;
@@ -158,27 +192,16 @@ background-size: cover;
 /********************** Media Q **********************/
 
 @media (max-width: 990px) {
-  .wrapper .button .icon{
-      display: inline-block;
-      padding: 0 1.8rem 0 2.1rem;
-      height: 60px;
-      width: 60px;
-      border-radius: 50px;
-      box-sizing: border-box;
-      line-height: 60px;
-      transition: all 0.3s ease-out;
-  }
-
   .scroll-down {
-      left: 48%;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: 50px;
   }
 }
 
 @media (max-width: 760px) {
-
-  .contenido {
-      min-height: 600px;
+  .inicio {
+    padding: 7rem 1.5rem;
   }
 
   .inicio .titulo p {
@@ -201,10 +224,6 @@ background-size: cover;
 }
 
 @media (max-width: 450px) {
-  .contenido {
-      min-height: 500px;
-  }
-
   .inicio .titulo p {
       font-size: 3rem;
   }
